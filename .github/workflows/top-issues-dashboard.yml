@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run top issues action
-        uses: rickstaa/top-issues-action@fa1b14384871ebbc2f341f953a728e8370788992 # v1.3.87
+        uses: rickstaa/top-issues-action@d9a117c449e5f3646ce6aab573034f53e79b648b # v1.3.89
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         with:
