@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
+import jsdoc from 'eslint-plugin-jsdoc';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,18 +24,16 @@ export default [...compat.extends("prettier"), {
         sourceType: "module",
     },
 
+    plugins: {
+        "jsdoc": jsdoc,
+    },
+
     rules: {
         "no-unexpected-multiline": "error",
 
-        "valid-jsdoc": ["error", {
-            requireReturn: true,
-            requireReturnDescription: true,
-            requireParamDescription: true,
-
-            prefer: {
-                return: "returns",
-            },
-        }],
+        "jsdoc/require-returns": "error",
+        "jsdoc/require-returns-description": "error",
+        "jsdoc/require-param-description": "error",
 
         "accessor-pairs": ["error", {
             getWithoutSet: false,
@@ -71,13 +70,7 @@ export default [...compat.extends("prettier"), {
         "no-negated-condition": "warn",
         "no-unneeded-ternary": "warn",
 
-        "require-jsdoc": ["warn", {
-            require: {
-                FunctionDeclaration: true,
-                MethodDefinition: true,
-                ClassDeclaration: false,
-            },
-        }],
+        "jsdoc/require-jsdoc": "warn",
 
         "keyword-spacing": ["error", {
             before: true,

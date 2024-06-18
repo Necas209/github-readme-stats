@@ -90,7 +90,7 @@ export default async (req, res) => {
     let PATsValid = true;
     try {
       await retryer(uptimeFetcher, {});
-    } catch (err) {
+    } catch {
       PATsValid = false;
     }
 

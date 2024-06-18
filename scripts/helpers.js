@@ -19,7 +19,7 @@ export const getRepoInfo = (ctx) => {
       owner: ctx.repo.owner,
       repo: ctx.repo.repo,
     };
-  } catch (error) {
+  } catch {
     return {
       owner: OWNER,
       repo: REPO,
