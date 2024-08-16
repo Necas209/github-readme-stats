@@ -44,13 +44,11 @@ export default [
           setWithoutGet: true,
         },
       ],
-
       "block-scoped-var": "warn",
       "consistent-return": "error",
       curly: "error",
       "no-alert": "error",
       "no-caller": "error",
-
       "no-warning-comments": [
         "warn",
         {
@@ -58,7 +56,6 @@ export default [
           location: "start",
         },
       ],
-
       "no-with": "warn",
       radix: "warn",
       "no-delete-var": "error",
