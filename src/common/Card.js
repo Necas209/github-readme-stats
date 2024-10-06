@@ -28,7 +28,7 @@ class Card {
     defaultTitle = "",
     titlePrefixIcon,
   }) {
-    this.width = width;
+    this.width = isNaN(width) || width <= 0 ? 100 : width;
     this.height = height;
 
     this.hideBorder = false;
